@@ -41,9 +41,15 @@
     <div class="second">
         <div class="container">
             <div class="second__func">
-                <input type="text" class="second__input" id="search_input" onkeyup="search()" placeholder="Поиск">
-        
-                
+                <div class="second__func-top">
+                    <input type="text" class="second__input" id="search_input" onkeyup="search()" placeholder="Поиск">
+                    <a><img src="./assets/img/sort.svg" alt="logo" class="second__sort"></a>
+                </div>
+                <div class="second__checkbox-list">
+                    <input type="checkbox" class="second__checkbox">Достопримечательности
+                    <input type="checkbox" class="second__checkbox">Развлечения
+                    <input type="checkbox" class="second__checkbox">Парки
+                </div>
             </div>
             <div class="second__cards-rows">
                 <ul class="second__ul" id="second_ul">
