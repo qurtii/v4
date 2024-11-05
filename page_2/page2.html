@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityGuide</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="header__block">
+                <a href="../main_page/main.html">
+                    <img src="./assets/img/logo.svg" alt="logo" class="header__header-logo">
+                </a>
+                <nav class="header__nav">
+                    <div class="header__burger" id="open_burger">
+                        <img src="./assets/img/burger (1).svg" alt="burger">
+                    </div>
+                    <ul class="header__ul">
+                        <a href="../main_page/main.html"><li class="header__li">ГЛАВНАЯ</li></a>
+                        <a href="../hostels_main/hostels_main.html"><li class="header__li">ОТЕЛИ</li></a>
+                        <a href="../contact/contact.html"><li class="header__li">КОНТАКТЫ</li></a>
+                    </ul>
+                    <div class="modal" id="modal_burger">
+                        <div class="modal__window">     
+                            <img src="./assets/img/burger.svg" alt="burger" class="modal__burger" id="burger_close">
+                            <ul class="modal__ul">
+                                <a href="../main_page/main.html"><li class="modal__li">ГЛАВНАЯ</li></a>
+                                <a href="../hostels_main/hostels_main.html"><li class="modal__li">ОТЕЛИ</li></a>
+                                <a href="../contact/contact.html"><li class="modal__li">КОНТАКТЫ</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="second">
+        <div class="container">
+            <div class="second__func">
+                <input type="text" class="second__input" id="search_input" onkeyup="search()" placeholder="Поиск">
+        
+                
+            </div>
+            <div class="second__cards-rows">
+                <ul class="second__ul" id="second_ul">
+
+                    <!-- КАРТОЧКА 1 (КРАСНАЯ ПЛОЩАДЬ) -->
+                    <li class="second__card" id="Красная площадь"><img src="./assets/img/краснаяплощадь.svg" alt="img" class="second__card-img"></li>                    
+                    <div class="second__modal_card" id="card1">
+                        <div class="second__modal_card-window">
+                            <div class="second__modal_card-header">
+                                <img src="./assets/img/краснаяплощадь v2.svg" alt="img" class="second__modal_card-img">
+                                <span class="second__modal_card-close" id="close1">&times;</span>
+                            </div>
+                            <h1 class="second__modal_card-title">Красная площадь</h1>
+                            <p class="second__modal_card-subtext">Красная площадь — это сердце Москвы и символ российской истории. С ее величественными архитектурными памятниками, такими как Кремль и Собор Василия Блаженного, площадь притягивает туристов и местных жителей. Уникальное сочетание исторических событий и современности делает Красную площадь местом, где пересекаются прошлое и настоящее</p>
+                            <a href="https://yandex.ru/maps/-/CDdLF-1J" target="_blank" class="second__modal_card-link">МАРШРУТ</a>
+                        </div>
+                    </div>
+
+                    <!-- КАРТОЧКА 3(ВДНХ) -->
+                    <li class="second__card second__card-img" id="вднх Выставка достижений народного хозяйства"><img src="./assets/img/вднх.svg" alt="img" class="second__card-img"></li>
+                
+                    <div class="second__modal_card" id="card3">
+                        <div class="second__modal_card-window">
+                            <div class="second__modal_card-header">
+                                <img src="./assets/img/вднх v2.svg" alt="img" class="second__modal_card-img">
+                                <span class="second__modal_card-close" id="close3" >&times;</span>
+                            </div>
+                            <h1 class="second__modal_card-title">ВДНХ</h1>
+                            <p class="second__modal_card-subtext">ВДНХ — это место, где история встречается с современностью, а культурные события переплетаются с отдыхом на свежем воздухе. Независимо от времени года, выставка предлагает уникальные впечатления и возможности для развлечения и обучения. Прогуливаясь по территории ВДНХ, вы сможете насладиться зелеными аллеями, красивыми фонтанами и памятниками</p>
+                            <a href="https://yandex.ru/maps/-/CDdTJTZn" target="_blank" class="second__modal_card-link">МАРШРУТ</a>
+                        </div>
+                    </div>
+                    
+                    <!-- КАРТОЧКА 5 (Александровский сад) -->
+                    <li class="second__card" class="second__card-5" id="Александровский сад"><img src="./assets/img/александсад.svg" alt="img" class="second__card-img"></li>
+                    
+                    <div class="second__modal_card" id="card5">
+                        <div class="second__modal_card-window">
+                            <div class="second__modal_card-header">
+                                <img src="./assets/img/алексансад v2.svg" alt="img" class="second__modal_card-img">
+                                <span class="second__modal_card-close" id="close5" >&times;</span>
+                            </div>
+                            <h1 class="second__modal_card-title">Александровский сад</h1>
+                            <p class="second__modal_card-subtext">Александровский сад — это не только место для прогулок, но и культурный центр, где проводятся выставки, концерты и праздничные мероприятия. Это идеальное место для отдыха, общения с природой и наслаждения историческим наследием Москвы. Сад славится своими ухоженными аллеями, зелеными насаждениями и живописными прудами</p>
+                            <a href="https://yandex.ru/maps/-/CDdTNE39" target="_blank" class="second__modal_card-link">МАРШРУТ</a>
+                        </div>
+                    </div>
+                    
+                    <!-- КАРТОЧКА 7 (ПАРК ЗАРЯДЬЕ) -->
+                    <li class="second__card" class="second__card-7" id="ПАРК ЗАРЯДЬЕ"><img src="./assets/img/парк зарядье.svg" alt="img" class="second__card-img"></li>
+
+                    <div class="second__modal_card" id="card7">
+                        <div class="second__modal_card-window">
+                            <div class="second__modal_card-header">
+                                <img src="./assets/img/паркзарядье v2.svg" alt="img" class="second__modal_card-img">
+                                <span class="second__modal_card-close" id="close7" >&times;</span>
+                            </div>
+                            <h1 class="second__modal_card-title">Парк Зарядье</h1>
+                            <p class="second__modal_card-subtext">Парк Зарядье в Москве — это уникальный городской ландшафтный проект, который гармонично сочетает природу и архитектуру. Расположенный в центре столицы, рядом с Кремлем и Красной площадью, парк предлагает великолепные виды на город и реку Москву. Парк стал настоящим оазисом для жителей и туристов, где можно наслаждаться природой, искусством и архитектурой в одном месте</p>
+                            <a href="https://yandex.ru/maps/-/CDdTNULI" target="_blank" class="second__modal_card-link">МАРШРУТ</a>
+                        </div>
+                    </div>
+
+                    <!-- КАРТОЧКА 9 (ГУМ) -->
+                    <li class="second__card" class="second__card-9" id="ГУМ Государственный универсальный магазин"><img src="./assets/img/гум.svg" alt="img" class="second__card-img"></li>
+
+                    <div class="second__modal_card" id="card9">
+                        <div class="second__modal_card-window">
+                            <div class="second__modal_card-header">
+                                <img src="./assets/img/гум v2.svg" alt="img" class="second__modal_card-img">
+                                <span class="second__modal_card-close" id="close9" >&times;</span>
+                            </div>
+                            <h1 class="second__modal_card-title">Гум</h1>
+                            <p class="second__modal_card-subtext">Государственный универсальный магазин (ГУМ) в Москве — это не просто торговый центр, а настоящий исторический и культурный памятник. Он поражает своей архитектурой в стиле русского ренессанса.
+                                Внутри ГУМа находятся роскошные магазины известных брендов, а также кафе и рестораны с разнообразной кухней. Просторные коридоры, витражи и оригинальные элементы декора создают атмосферу уюта и элегантности</p>
+                            <a href="https://yandex.ru/maps/-/CDdTNV8b" target="_blank" class="second__modal_card-link">МАРШРУТ</a>
+                        </div>
+                    </div>
+                
+                    <!-- КАРТОЧКА 2 -->
+                    <li class="second__card" class="second__card-2" id="московская канатная дорога"><img src="./assets/img/канатнаядорога.svg" alt="img" class="second__card-img"></li>
+                    <div class="second__modal_card" id="card2">
+                        <div class="second__modal_card-window">
+                            <div class="second__modal_card-header">
+                                <img src="./assets/img/канатдорога v2.svg" alt="img" class="second__modal_card-img">
+                                <span class="second__modal_card-close" id="close2" >&times;</span>
+                            </div>
+                            <h1 class="second__modal_card-title">Московская канатная дорога </h1>
+                            <p class="second__modal_card-subtext">Московская канатная дорога — это уникальное транспортное сооружение, которое соединяет берега реки Москвы, предлагая пассажирам захватывающий вид на город с высоты птичьего полета. Протянувшись на несколько километров, она открывает панорамные виды на знаковые достопримечательности, такие как Кремль, Храм Христа Спасителя и парк Зарядье</p>
+                            <a href="https://yandex.ru/maps/-/CDdTVVZv" target="_blank" class="second__modal_card-link">МАРШРУТ</a>
+                        </div>
+                    </div>
+
+                    <!-- КАРТОЧКА 4 (МСК СИТИ) -->
+                    <li class="second__card" class="second__card-4" id="москва сити"><img src="./assets/img/москва сити.svg" alt="img" class="second__card-img"></li>
+
+                    <div class="second__modal_card" id="card4">
+                        <div class="second__modal_card-window">
+                            <div class="second__modal_card-header">
+                                <img src="./assets/img/мсксити v2.svg" alt="img" class="second__modal_card-img">
+                                <span class="second__modal_card-close" id="close4" >&times;</span>
+                            </div>
+                            <h1 class="second__modal_card-title">Москва Сити</h1>
+                            <p class="second__modal_card-subtext">Москва-Сити — это впечатляющий деловой квартал, который стал символом современного развития столицы России. Расположенный на берегу реки Москвы, комплекс небоскрёбов поражает своей архитектурной смелостью и инновационным дизайном. Высотные здания, такие как «Федерация», «Восточная башня» и «Империя», стремятся к небесам, создавая уникальный силуэт города</p>
+                            <a href="https://yandex.ru/maps/-/CDdTVKmc" target="_blank" class="second__modal_card-link">МАРШРУТ</a>
+                        </div>
+                    </div>
+                    <!-- КАРТОЧКА 6 (ОКЕАНИРУМ) -->
+                    <li class="second__card" class="second__card-6" id="ОКЕАНИРУМ"><img src="./assets/img/океанариум.svg" alt="img" class="second__card-img"></li>
+                    <div class="second__modal_card" id="card6">
+                        <div class="second__modal_card-window">
+                            <div class="second__modal_card-header">
+                                <img src="./assets/img/океанариум v2.svg" alt="img" class="second__modal_card-img">
+                                <span class="second__modal_card-close" id="close6" >&times;</span>
+                            </div>
+                            <h1 class="second__modal_card-title">Океанариум</h1>
+                            <p class="second__modal_card-subtext">Океанариум в Москве — это захватывающее место, где можно окунуться в подводный мир и познакомиться с разнообразием морской фауны. Расположенный в парке «Садовое кольцо», океанариум предлагает уникальные экспозиции, в которых представлены сотни видов рыб, морских млекопитающих, рептилий и беспозвоночных. Океанариум в Москве предлагает уникальную возможность увидеть чудеса океана и узнать больше о важности охраны окружающей среды</p>
+                            <a href="https://yandex.ru/maps/-/CDdTV8yY" target="_blank" class="second__modal_card-link">МАРШРУТ</a>
+                        </div>
+                    </div>
+                    <!-- КАРТОЧКА 8 (ТЕЛЕБАШНЯ) -->
+                    <li class="second__card" class="second__card-8" id="ТЕЛЕБАШНЯ"><img src="./assets/img/телебашня.svg" alt="img" class="second__card-img"></li>
+                    <div class="second__modal_card" id="card8">
+                        <div class="second__modal_card-window">
+                            <div class="second__modal_card-header">
+                                <img src="./assets/img/телебашня v2.svg" alt="img" class="second__modal_card-img">
+                                <span class="second__modal_card-close" id="close8" >&times;</span>
+                            </div>
+                            <h1 class="second__modal_card-title">Останкинская телебашня</h1>
+                            <p class="second__modal_card-subtext">Останкинская телебашня — это одна из самых высоких и известных телевизионных башен в мире, а так же символ Москвы. Высота достигает 540 метров и является шедевром инженерного искусства. Башня служит не только для трансляции телевизионных и радиосигналов, но и является популярной туристической достопримечательностью. На смотровой площадке, расположенной на высоте 337 метров, открывается захватывающий панорамный вид на город</p>
+                            <a href="https://yandex.ru/maps/-/CDdTVT1l" target="_blank" class="second__modal_card-link">МАРШРУТ</a>
+                        </div>
+                    </div>
+                    <!-- КАРТОЧКА 10 (ПАРК ГОРЬКОГО) -->
+                    <li class="second__card" class="second__card-10" id="ПАРК ГОРЬКОГО"><img src="./assets/img/паркгорького.svg" alt="img" class="second__card-img"></li>
+
+                    <div class="second__modal_card" id="card10">
+                        <div class="second__modal_card-window">
+                            <div class="second__modal_card-header">
+                                <img src="./assets/img/паркгорького v2.svg" alt="img" class="second__modal_card-img">
+                                <span class="second__modal_card-close" id="close10" >&times;</span>
+                            </div>
+                            <h1 class="second__modal_card-title">Парк Горького</h1>
+                            <p class="second__modal_card-subtext">Парк Горького — это один из самых популярных и красивых парков Москвы. Основанный в 1928 году, он носит имя известного писателя Максима Горького и стал излюбленным местом отдыха как для всех. Одной из особенностей парка является его разнообразие: здесь есть уютные кафе, велосипедные и роликовые дорожки, а также детские площадки. Не забудьте заглянуть в Музей современного искусства «Гараж», расположенный в самом сердце паркаы</p>
+                            <a href="https://yandex.ru/maps/-/CDdTV-ON" target="_blank" class="second__modal_card-link">МАРШРУТ</a>
+                        </div>
+                    </div>
+                
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <hr class="footer__line">
+            <img src="./assets/img/footer_logo.svg" alt="logo" class="footer__logo">
+            <div class="footer__text-row">
+                <p class="footer__text1">Россия, Москва, 117997, 
+                    <br>ул. Авиамоторная, 19
+                    <br>© 2018—2024 ООО CityGuide.</p>
+                <p class="footer__text2">Информация размещенная на сайте, носит справочный характер
+                    <br> <a href="#"><span>Политика конфиденциальности</span></a></p>
+                <p class="footer__text3">ИП Иванов И.И
+                    <br>ИНН 918276390012
+                    <br>ОРГН 291846719387124</p>
+            </div>
+        </div>
+    </footer>
+    <script src="./assets/js/page2.js"></script>
+</body>
+</html>
