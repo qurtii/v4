@@ -212,12 +212,22 @@ body{
     display: grid;
     grid-template-columns: 435px 435px;
     gap: 30px;
+    animation: showPage 0.8s;
   }
   &__pagetwo{
     margin-top: 45px;
     display: none;
     grid-template-columns: 435px 435px;
     gap: 30px;
+    animation: showPage 0.8s;
+    @keyframes showPage {
+      from{
+        opacity: 0;
+      }
+      to{
+        opacity: 1;
+      }
+    }
   }
   &__modal{
     display: none;
