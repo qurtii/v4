@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityGuide</title>
+    <link rel="stylesheet" href="./assets/css/contact.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="container">
+            <div class="header__block">
+                <a href="../main_page/main.html">
+                    <img src="./assets/img/logo.svg" alt="logo" class="header__header-logo">
+                </a>                
+                <nav class="header__nav">
+                    <div class="header__burger">
+                        <img src="./assets/img/burger (1).svg" alt="burger" id="open_burger">
+                    </div>
+                    <ul class="header__ul">
+                        <a href="../main_page/main.html"><li class="header__li">ГЛАВНАЯ</li></a>
+                        <a href="../hostels_main/hostels_main.html"><li class="header__li">ОТЕЛИ</li></a>
+                        <a href="../page_2/page2.html"><li class="header__li header__li-btn" >ЧТО ПОСЕТИТЬ</li></a>
+                    </ul>
+                    <div class="modal" id="modal_burger">
+                        <div class="modal__window">     
+                            <img src="./assets/img/burger.svg" alt="burger" class="modal__burger" id="burger_close">
+                            <ul class="modal__ul">
+                                <a href="../main_page/main.html"><li class="modal__li">ГЛАВНАЯ</li></a>
+                                <a href="../hostels_main/hostels_main.html"><li class="modal__li">ОТЕЛИ</li></a>
+                                <a href="../contact/contact.html"><li class="modal__li">ЧТО ПОСЕТИТЬ</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="container">
+            <div class="main__title">Наши контакты</div>
+            <div class="main__row">
+                <div class="main__text-block">
+                    <div class="main__text-adress">г. Москва, 
+                        ул. Авиамоторная, д. 10</div>
+                    <div class="main__text-timework">
+                        <div class="main__time">ПН-ПТ 9:00-17:00
+                            СБ-ВС 9:00-15:00
+                        </div>
+
+                    </div>
+                    <div class="main__numphone">
+                        <div class="main__phone-1">+7 (973)-230-21-22</div>
+                        <div class="main__phone-2">+7 (906)-170-41-42</div>
+                    </div>
+                    <button id="open" class="main__button" type="button">Связаться с нами</button>
+                </div>
+
+                <div class="main__modal" id="modal">
+                    <div class="main__modal-window">
+                        <div class="main__modal-header">
+                            <h1 class="main__modal-title">Связаться с нами</h1>
+                            <span class="main__modal-close">&times;</span>
+                        </div>
+                        <form action="" class="main__modal-form">
+                            <div class="main__modal-fio">
+                                <div class="main__modal-fio1">
+                                    <p class="main__modal-text">Фамилия</p>
+                                    <input type="text" class="main__modal-fio-input" placeholder="Иванов">
+                                </div>
+                                <div class="main__modal-fio2">
+                                    <p class="main__modal-text">Имя</p>
+                                    <input type="text" class="main__modal-fio-input" placeholder="Иван">
+                                </div>
+                            </div>
+                            <div class="main__modal-tel">
+                                <p class="main__modal-text">Номер телефона</p>
+                                <input id="phone" class="main__modal-input" type="text" name="phone" placeholder="+7(999)-999-99-99">
+                            </div>
+                            
+                            <div class="main__modal-email">
+                                <p class="main__modal-text">Электронная почта</p>
+                                <input class="main__modal-input" type="email" placeholder="example@gmail.com">
+                            </div>
+                            <input type="text" class="main__modal-subtext" placeholder="Введите что-нибудь...">
+                            
+                            <button class="main__modal-send">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="main__map-block">
+                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A9a8c464c0761f0ec82a61f0352df0dec50f76fc5049b95a2438ce5308582b6a1&amp;width=650&amp;height=485&amp;lang=ru_RU&amp;scroll=true"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="second">
+        <div class="container">
+            <div class="second__title">Наши соцсети</div>
+            <div class="second__row">
+                <a href="https://vk.com/join"><img src="./assets/img/vk.svg" alt="icon" class="second__icon-1"></a>
+
+                <div class="second__icon2-block">
+                    <a href="https://web.telegram.org/"><img src="./assets/img/image (3).png" alt="icon" class="second__icon-2"></a>
+                </div>
+
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="./assets/img/Mask group.svg" alt="icon" class="second__icon-3"></a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__block">
+                <hr class="footer__line">
+                <img src="./assets/img/footer_logo.svg" alt="logo" class="footer__logo">
+                <div class="footer__text-row">
+                    <p class="footer__text1">Россия, Москва, 117997, 
+                        <br>ул. Авиамоторная, 19
+                        <br>© 2018—2024 ООО CityGuide.</p>
+                    <p class="footer__text2">Информация размещенная на сайте, носит справочный характер
+                        <br> <a href="#"><span>Политика конфиденциальности</span></a></p>
+                    <p class="footer__text3">ИП Иванов И.И
+                        <br>ИНН 918276390012
+                        <br>ОРГН 291846719387124</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./assets/js/contact.js"></script>
+	
+    <script src="https://unpkg.com/imask"></script>
+</body>
+</html>

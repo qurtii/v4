@@ -1,3 +1,6 @@
+
+
+
 function search() {
     let input, filter, ul, li, i;
     input = document.getElementById('search');
@@ -13,6 +16,8 @@ function search() {
         }
     }
 }
+
+// сортировка
 openList = document.querySelector('.second__functional-sort');
 sortOptions = document.querySelector('.second__functional-list');
 
@@ -25,7 +30,6 @@ openList.onclick = function(){
         sortOptions.style.display = 'none';
     }
 }
-
 const firstCheckbox = document.querySelector('.second__functional-checkbox-1');
 const allCard = document.querySelectorAll('.second__card');  
 const FirstBlock = document.querySelector(".checkbox_show-1");
@@ -86,75 +90,43 @@ thirdCheckbox.addEventListener('change', function(){
 })
 
 
+// пагинация
+const baseUrl = 'https://672b185d976a834dd02595f5.mockapi.io/cards';
+const cardPerPage = 4;
+let currentPage = 1;
 
-const firstPage = document.querySelector('.second__pageone')
-const secondPage = document.querySelector('.second__pagetwo')
-const clickOne = document.querySelector('.second__pagination-link-1')
-const clickTwo = document.querySelector('.second__pagination-link-2')
-
-clickTwo.onclick = function(){
-    firstPage.style.display = "none"
-    secondPage.style.display = "grid"
+function fetchCards() {
+    fetch(baseUrl)
+        .then(response => response.json())
+        .then(cards => {
+            displayCards(cards)
+        })
+        .catch(error => {
+            console.error("Ошибка при получении данных", error);
+        })
 }
-clickOne.onclick = function(){
-    secondPage.style.display = "none"
-    firstPage.style.display = "grid"
+
+function displayCards(cards){
+    const cardList = document.querySelector('.second__card-list');
+    cardList.innerHTML = '';
+    
+    cards.forEach(card => {
+        const cardLi = document.createElement('li');
+        cardLi.classList.add('second__card');
+
+        const itemCard = document.createElement('img');
+        itemCard.src = card.card;
+        itemCard.alt = card.name;
+        itemCard.classList.add('second__card-img');
+
+        cardLi.appendChild(itemCard);
+        cardList.appendChild(cardLi);
+
+    })
 }
 
-
-// const sortOpen = document.querySelector('.second__sort');
-// const sortOption = document.querySelector('.second__checkbox-list');
-// sortOpen.onclick = function(){
-//     if (sortOption.style.display === "none"){
-//         sortOption.style.display = "flex"
-//     }
-//     else{
-//         sortOption.style.display = "none"
-//     }
-// }
-
-
-// const checkboxOne = document.querySelector('.second__checkbox-one');
-// const forCheckboxOne = document.querySelectorAll('.card_checkbox1');
-
-
-// checkboxOne.addEventListener('change', function(){
-//     if (checkboxOne.checked){
-//         allCard.forEach(function(card){
-//             card.style.display = "none";
-//             open1.style.display = "block"
-//         })
-//     }
-//     else{
-//         allCard.forEach(function(card){
-//             card.style.display = 'block'
-//         })
-//     }
-// })
+fetchCards()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// checkboxOne.addEventListener('change', function() {
-//     if (checkboxOne.checked) {
-//         allCard.forEach(function(card) {
-//             card.style.display = "none";
-//         });
-//     } else {
-//         allCard.forEach(function(card) {
-//             card.style.display = "block"; 
-//         });
-//     }
-// });
 
