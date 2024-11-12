@@ -7,6 +7,8 @@ function search() {
     filter = input.value.toUpperCase();
     ul = document.getElementById("card_list");
     li = ul.getElementsByTagName('li');
+
+    // filter.includes(data.name)
     
     for (i = 0; i < li.length; i++) {
         if (li[i].id.toUpperCase().indexOf(filter) > -1) {

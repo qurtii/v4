@@ -64,3 +64,41 @@ modal_burger.onclick = function(event) {
     }
 }
 
+document.querySelector('.main__modal-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const data = {
+        firtsName: formData.get('firstName'),
+        lastName: formData.get('lastName'),
+        phoneNumber: formData.get('phoneNumber'),
+        E_mail: formData.get('email'),
+        Message: formData.get('message')
+    };
+
+    fetch('https://672b185d976a834dd02595f5.mockapi.io/contactForm', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Данные отправлены');
+        let DateSent = document.getElementById('formSend');
+        DateSent.classList.add('main__send-show')
+        document.querySelector('.main__modal-form').reset()
+        
+        setTimeout(() => {
+            DateSent.classList.remove('main__send-show')
+            console.log('Timeout')
+        }, 3000)
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+});
+
+
+

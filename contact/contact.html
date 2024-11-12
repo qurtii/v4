@@ -58,35 +58,40 @@
                     <button id="open" class="main__button" type="button">Связаться с нами</button>
                 </div>
 
+                <div class="main__send" id="formSend">
+                    <div class="main__send-box">
+                        <p class="main__send-text">Сообщение отправлено!</p>
+                    </div>
+                </div>
                 <div class="main__modal" id="modal">
                     <div class="main__modal-window">
                         <div class="main__modal-header">
                             <h1 class="main__modal-title">Связаться с нами</h1>
                             <span class="main__modal-close">&times;</span>
                         </div>
-                        <form action="" class="main__modal-form">
+                        <form action="" class="main__modal-form" >
                             <div class="main__modal-fio">
                                 <div class="main__modal-fio1">
                                     <p class="main__modal-text">Фамилия</p>
-                                    <input type="text" class="main__modal-fio-input" placeholder="Иванов">
+                                    <input type="text" class="main__modal-fio-input" placeholder="Иванов" name="firstName">
                                 </div>
                                 <div class="main__modal-fio2">
                                     <p class="main__modal-text">Имя</p>
-                                    <input type="text" class="main__modal-fio-input" placeholder="Иван">
+                                    <input type="text" class="main__modal-fio-input" placeholder="Иван" name="lastName">
                                 </div>
                             </div>
                             <div class="main__modal-tel">
                                 <p class="main__modal-text">Номер телефона</p>
-                                <input id="phone" class="main__modal-input" type="text" name="phone" placeholder="+7(999)-999-99-99">
+                                <input id="phone" class="main__modal-input" type="text" name="phoneNumber" placeholder="+7(999)-999-99-99" name="phoneNumber">
                             </div>
                             
                             <div class="main__modal-email">
                                 <p class="main__modal-text">Электронная почта</p>
-                                <input class="main__modal-input" type="email" placeholder="example@gmail.com">
+                                <input class="main__modal-input" type="email" placeholder="example@gmail.com" name="email">
                             </div>
-                            <input type="text" class="main__modal-subtext" placeholder="Введите что-нибудь...">
+                            <input type="text" class="main__modal-subtext" placeholder="Введите что-нибудь..." name="message">
                             
-                            <button class="main__modal-send">Отправить</button>
+                            <button class="main__modal-send" type="submit">Отправить</button>
                         </form>
                     </div>
                 </div>
