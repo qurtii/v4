@@ -39,7 +39,7 @@
 
 
     <section class="second">
-        <div class="container">
+        <div class="container" id="secondContainer">
             <div class="second__functional">
                 <div class="second__functional-header">
                     <input type="text" class="second__functional-search" id="search" placeholder="Поиск" onkeyup="search()">
@@ -47,7 +47,7 @@
                 </div>
                 <div class="second__functional-list">
                     <div class="second__functional-list_1">
-                        <input type="checkbox" class="second__functional-checkbox second__functional-checkbox-1">
+                        <input type="checkbox" id="firstCheckbox" class="second__functional-checkbox">
                         <p>Достопримечательности</p>
                     </div>
                     <div class="second__functional-list_1">
@@ -59,76 +59,10 @@
                 </div>
             </div>
 
-            <ul class="second__card-list" id="card_list">
-                <li class="second__card" id="Красная площадь"><img src="./assets/img/краснаяплощадь.svg" alt="card" class="second__card-img"></li>
-                <div class="second__modal" id="card_one">
-                    <div class="second__modal-window">
-                        <div class="second__modal-header">
-                            <img src="./assets/img/краснаяплощадь v2.svg" alt="img" class="second__modal-img">
-                            <span class="second__modal-close" id="close1">&times;</span>
-                        </div>
-                        <h1 class="second__modal-title">Красная площадь</h1>
-                        <p class="second__modal-subtext">Красная площадь — это сердце Москвы и символ российской истории. С ее величественными архитектурными памятниками, такими как Кремль и Собор Василия Блаженного, площадь притягивает туристов и местных жителей. Уникальное сочетание исторических событий и современности делает Красную площадь местом, где пересекаются прошлое и настоящее</p>
-                        <a href="https://yandex.ru/maps/-/CDdLF-1J" target="_blank" class="second__modal-link">МАРШРУТ</a>
-                    </div>
-                </div>
 
-                <li class="second__card" id="Московская канатная дорога"><img src="./assets/img/канатнаядорога.svg" alt="card" class="second__card-img"></li>
-                <div class="second__modal" id="card_one">
-                    <div class="second__modal-window">
-                        <div class="second__modal-header">
-                            <img src="./assets/img/канатдорога v2.svg" alt="img" class="second__modal-img">
-                            <span class="second__modal-close" id="close1">&times;</span>
-                        </div>
-                        <h1 class="second__modal-title">Московская канатная дорога </h1>
-                        <p class="second__modal-subtext">Московская канатная дорога — это уникальное транспортное сооружение, которое соединяет берега реки Москвы, предлагая пассажирам захватывающий вид на город с высоты птичьего полета. Протянувшись на несколько километров, она открывает панорамные виды на знаковые достопримечательности, такие как Кремль, Храм Христа Спасителя и парк Зарядье</p>
-                        <a href="https://yandex.ru/maps/-/CDdLF-1J" target="_blank" class="second__modal-link">МАРШРУТ</a>
-                    </div>
-                </div>
-                <li class="second__card" id="Москва Сити"><img src="./assets/img/москва сити.svg" alt="card" class="second__card-img"></li>
-                <li class="second__card" id="Александровский сад"><img src="./assets/img/александсад.svg" alt="card" class="second__card-img"></li>
-                <li class="second__card" id="парк зарядье"><img src="./assets/img/парк зарядье.svg" alt="card" class="second__card-img"></li>
-                <li class="second__card" id="вднх Выставка достижений народного хозяйства"><img src="./assets/img/вднх.svg" alt="card" class="second__card-img"></li>
-                <li class="second__card" id="гум Государственный универсальный магазин"><img src="./assets/img/гум.svg" alt="card" class="second__card-img"></li>
-                <li class="second__card" id="Парк горького"><img src="./assets/img/паркгорького.svg" alt="card" class="second__card-img"></li>
-                <li class="second__card" id="океанариум"><img src="./assets/img/океанариум.svg" alt="card" class="second__card-img"></li>
-                <li class="second__card" id="останкинская телевизионная башня"><img src="./assets/img/телебашня.svg" alt="card" class="second__card-img"></li>
-            </ul> 
             <div class="second__pagination">
-                <button class="second__pagination-link second__pagination-prev">&larr; Предыдущая страница</button>
-                <button class="second__pagination-link second__pagination-next">Следующая страница &rarr;</button>
-                
-            </div>
-        </div>
-    </section>
-
-    <section class="checkbox_show-1">
-        <div class="container">
-            <div class="checkbox__card-list">
-                <li class="checkbox__card"><img src="./assets/img/краснаяплощадь.svg" alt="card" class="checkbox__card-img"></li>
-                <li class="checkbox__card"><img src="./assets/img/телебашня.svg" alt="card" class="second__card-img"></li>
-            </div>
-        </div>
-    </section>
-
-    <section class="checkbox_show-2">
-        <div class="container">
-            <div class="checkbox__card-list">
-                <li class="checkbox__card"><img src="./assets/img/москва сити.svg" alt="card" class="second__card-img"></li>
-                <li class="checkbox__card"><img src="./assets/img/канатнаядорога.svg" alt="card" class="second__card-img"></li>
-                <li class="checkbox__card"><img src="./assets/img/гум.svg" alt="card" class="second__card-img"></li>
-                <li class="checkbox__card"><img src="./assets/img/океанариум.svg" alt="card" class="second__card-img"></li>
-            </div>
-        </div>
-    </section>
-    <section class="checkbox_show-3">
-        <div class="container">
-            <div class="checkbox__card-list">
-                <li class="checkbox__card"><img src="./assets/img/александсад.svg" alt="card" class="second__card-img"></li>
-                <li class="checkbox__card"><img src="./assets/img/вднх.svg" alt="card" class="second__card-img"></li>
-                <li class="checkbox__card"><img src="./assets/img/паркгорького.svg" alt="card" class="second__card-img"></li>
-                <li class="checkbox__card"><img src="./assets/img/парк зарядье.svg" alt="card" class="second__card-img"></li>
-
+                <button class="second__pagination-link second__pagination-prev" >&larr; Предыдущая страница</button>
+                <button class="second__pagination-link second__pagination-next" >Следующая страница &rarr;</button>            
             </div>
         </div>
     </section>
