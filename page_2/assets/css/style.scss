@@ -50,12 +50,12 @@ body{
     font-weight: 800;
     height: 10px;
     &__block{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        @media (max-width: 945px){
-          margin-top: -25px;
-        }
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @media (max-width: 945px){
+        margin-top: -25px;
+      }
     }
 
     &__header-logo{
@@ -95,7 +95,7 @@ body{
         border: none;
         &:hover{
           transition: all .3s ease;
-          transform: scale(1.03);
+          color: #4b4b4b;
         }
     }
 }
@@ -154,6 +154,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 7px;
+    justify-content: left;
     &-header{
       display: flex;
       gap: 7px;
@@ -164,8 +165,8 @@ body{
       background-color: #000000;
       border: none;
       border-radius: 7px;
-      font-size: 20px;
-      padding: 10px 10px;
+      font-size: 18px;
+      padding: 15px 15px;
       font-weight: 600;
       @media (max-width: 945px){ 
         margin-left: -290px;
@@ -227,12 +228,9 @@ body{
       transform: rotate(360deg);
   }
   } 
-  &__card-list{
-    margin-top: 45px;
-    display: grid;
-    grid-template-columns: 435px 435px;
-    gap: 30px;
+  &__pagination-page{
     animation: showPage 0.8s;
+    animation-iteration-count: 1;
     @keyframes showPage {
       from{
         opacity: 0;
@@ -241,6 +239,15 @@ body{
         opacity: 1;
       }
     }
+  }
+  &__card-list{
+    margin-top: 45px;
+    display: grid;
+    grid-template-columns: 435px 435px;
+    gap: 30px;
+  }
+  &__card-img{
+    max-height: 260px;
   }
   &__modal{
     display: none;
@@ -340,9 +347,6 @@ body{
       &:hover{
         background-color: #ececec;
         transition: all .2s ease;
-      }
-      &-1{
-        padding: 6px 8px 6px 8px;
       }
     }
   }

@@ -103,8 +103,8 @@ function fetchCards() {
         .then(response => response.json())
         .then(data => {
             cards = data;  // Сохраняем все карточки в переменную
-            displayCards(currentPage);
-            setupPagination();
+                displayCards(currentPage);
+                setupPagination();
             document.querySelector('.second__loader').style.display = 'none'
         })
         .catch(error => {
@@ -168,7 +168,9 @@ function setupPagination() {
 fetchCards();
 
 
-
+sightArr = [1,3,10,11]
+entertainmentArr = [2,3,4,12]
+parkArr = [5,6,8,9]
 
 // сортировка
 
@@ -178,6 +180,7 @@ const sortOptions = document.querySelector('.second__functional-list')
 openList.onclick = function(){
     if (sortOptions.style.display === 'flex'){
         sortOptions.style.display = 'none';
+
     }
     else{
         sortOptions.style.display = 'flex'
@@ -186,6 +189,17 @@ openList.onclick = function(){
 
 const cardList = document.querySelector('.second__card-list');
 const firstCheckbox = document.getElementById('firstCheckbox');
+
+firstCheckbox.addEventListener('change', function() {
+    if (firstCheckbox.checked) {
+        console.log('Чекбокс выбран');
+        cards.forEach(card => {
+            if (sightArr.includes(cards.id)) {
+                console.log(cards.id);
+            }
+        });
+    }
+});
 
 
 

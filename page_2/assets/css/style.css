@@ -98,7 +98,7 @@ body {
 }
 .header__li:hover {
   transition: all 0.3s ease;
-  transform: scale(1.03);
+  color: #4b4b4b;
 }
 
 .modal {
@@ -152,6 +152,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 7px;
+  justify-content: left;
 }
 .second__functional-header {
   display: flex;
@@ -163,8 +164,8 @@ body {
   background-color: #000000;
   border: none;
   border-radius: 7px;
-  font-size: 20px;
-  padding: 10px 10px;
+  font-size: 18px;
+  padding: 15px 15px;
   font-weight: 600;
 }
 @media (max-width: 945px) {
@@ -228,12 +229,9 @@ body {
     transform: rotate(360deg);
   }
 }
-.second__card-list {
-  margin-top: 45px;
-  display: grid;
-  grid-template-columns: 435px 435px;
-  gap: 30px;
+.second__pagination-page {
   animation: showPage 0.8s;
+  animation-iteration-count: 1;
 }
 @keyframes showPage {
   from {
@@ -242,6 +240,15 @@ body {
   to {
     opacity: 1;
   }
+}
+.second__card-list {
+  margin-top: 45px;
+  display: grid;
+  grid-template-columns: 435px 435px;
+  gap: 30px;
+}
+.second__card-img {
+  max-height: 260px;
 }
 .second__modal {
   display: none;
@@ -343,9 +350,6 @@ body {
 .second__pagination-link:hover {
   background-color: #ececec;
   transition: all 0.2s ease;
-}
-.second__pagination-link-1 {
-  padding: 6px 8px 6px 8px;
 }
 
 .checkbox_show-1 {

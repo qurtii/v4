@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel</title>
+    <link rel="stylesheet" href="./main_page/css/style.css">
+</head>
+<body>
+  <div class="main">
+    <div class="container">
+      <div class="main__header">
+        <nav class="main__nav">
+          <a href="#">
+            <img src="./main_page/img/logo.svg" alt="" class="main__nav-logo">
+          </a>
+          <div class="main__burger" id="open_burger" >
+            <img src="./main_page/img/burger.svg" alt="burger">
+          </div>
+          <ul class="main__ul">
+            <a href="./hostels_main/hostels_main.html"><li class="main__li">ОТЕЛИ</li></a>
+            <a href="./contact/contact.html"><li class="main__li">КОНТАКТЫ</li></a>
+            <a href="./page_2/page2.html"><li class="main__li main__li-btn" >ЧТО ПОСЕТИТЬ</li></a>
+          </ul>
+
+          <div class="modal" id="modal_burger">
+            <div class="modal__window">     
+                <img src="./main_page/img/burger.svg" alt="burger" class="modal__burger" id="burger_close">
+                <ul class="modal__ul">
+                    <a href="#"><li class="modal__li">ОТЕЛИ</li></a>
+                    <a href="./contact/contact.html"><li class="modal__li">КОНТАКТЫ</li></a>
+                    <a href="./page_2/page2.html"><li class="modal__li">ЧТО ПОСЕТИТЬ</li></a>
+                </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    
+    <div class="main__title">Москва - столица Российской Федерации</div>
+  </div>
+
+  
+  <div class="second">
+    <div class="container">
+      <div class="second__wrap">
+        <div class="second__text">
+          <div class="second__title">Путеводитель по Москве для туристов</div>
+          <div class="second__subtitle_one">Москва - столица России и крупнейший город страны. Это огромный мегаполис, который является историческим, политическим и духовным сердцем Российской Федерации. Москва - крупнейшая столица Европы, наполненная достопримечательностями, памятниками истории и культуры, а также музеями мирового уровня. Это город невероятной динамики и размеров, который невозможно объять за одну поездку. </div>
+          <div class="second__subtitle_two">Москва - очаровательный современный город, имеющий огромное количество достопримечательностей и интересных мест: от древней крепости и грандиозных соборов до красивых парков и футуристических небоскребов. Столица России существует уже около девяти веков. На её улочках можно встретить старинные сакральные памятники и дворцы, которые соседствуют с монументальными зданиями советской архитектуры и ультрасовременными сооружениями. Но не только этим славится Москва. Столица имеет колоссальное количество театров, музеев, галерей, а также великолепных ресторанов, уютных кафе и модных клубов. Поэтому Москва способна надолго занять любого туриста. </div>
+        </div>
+        <div class="second__map">
+          <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A7a7ab50649f04b6106317791ec90613d4301d4191c67b57634649fb26b6fd2f5&amp;width=720&amp;height=650&amp;lang=ru_RU&amp;scroll=true"></script>
+        </div>
+      </div>
+    </div>
+  
+  
+  </div>
+
+  <div class="third">
+    <div class="container">
+      <div class="third__title">Интересные места для посещения</div>
+
+
+      <div class="third__card-wrapper">
+        <!-- <button id="button_left" class="third__slider-btn third__slider-left">&lt;</button> -->
+        <div class="third__card-list">
+          <div class="third__slider">
+            <div class="third__slider-row">
+              <a href="./page_2/page2.html#card1" class="third__card-link"><img id="card1" src="./main_page/img/краснаяплощадь.svg" alt="img" class="third__card-img"></a>
+              <a href="./page_2/page2.html#card2" class="third__card-link"><img id="card2" src="./main_page/img/мскканатдорога.svg" alt="img" class="third__card-img"></a>
+              <a href="./page_2/page2.html#card3" class="third__card-link"><img id="card3" src="./main_page/img/вднх.svg" alt="img" class="third__card-img"></a>     
+              <a href="./page_2/page2.html#card8" class="third__card-link"><img id="card4" src="./main_page/телебашня (1).svg" alt="img" class="third__card-img"></a>
+              <a href="./page_2/page2.html#card5" class="third__card-link"><img id="card5" src="./main_page/алексад2.svg" alt="img" class="third__card-img"></a>
+              <a href="./page_2/page2.html#card6" class="third__card-link"><img id="card2" src="./main_page/океанар.svg" alt="img" class="third__card-img"></a>
+              <a href="./page_2/page2.html#card4" class="third__card-link"><img id="card2" src="./main_page/москвасити.svg" alt="img" class="third__card-img"></a>
+              <a href="./page_2/page2.html#card9" class="third__card-link"><img id="card2" src="./main_page/гум2.svg" alt="img" class="third__card-img"></a>
+              <a href="./page_2/page2.html#card7" class="third__card-link"><img id="card2" src="./main_page/паркзарядье.svg" alt="img" class="third__card-img"></a>
+              <a class="third__slider-previous third__slider-btn" onclick="previousSlide()" >&#10094;</a>
+              <a class="third__slider-next third__slider-btn" onclick="nextSlide()">&#10095;</a>
+            </div>
+          </div>
+        </div>
+        <!-- <button id="button_right" class="third__slider-btn third__slider-right">&gt;</button> -->
+      </div>
+
+      <a class="third__btn" href="./page_2/page2.html">Подробнее</a>
+
+    </div>
+  </div>
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <hr class="footer__line">
+      <div class="footer_block">
+        <img src="./main_page/img/footer logo (1).svg" alt="logo" class="footer__logo">
+        <div class="footer__row">
+          <p class="footer__text1">Россия, Москва, 117997, 
+            <br>ул. Авиамоторная, 19
+            <br>© 2018—2024 ООО CityGuide.</p>
+          <p class="footer__text2">Информация размещенная на сайте, носит справочный характер
+            <br> <a href="#"><span>Политика конфиденциальности</span></a></p>
+          <p class="footer__text3">ИП Иванов И.И
+            <br>ИНН 918276390012
+            <br>ОРГН 291846719387124</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./main_page/javascript/script.js"></script>
+  
+</body>
+</html>
