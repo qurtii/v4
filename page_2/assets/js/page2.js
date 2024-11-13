@@ -5,7 +5,7 @@ function search() {
     let input, filter, ul, li, i;
     input = document.getElementById('search');
     filter = input.value.toUpperCase();
-    ul = document.getElementById("card_list");
+    ul = document.querySelector('.second__card-list');
     li = ul.getElementsByTagName('li');
 
     // filter.includes(data.name)
@@ -105,6 +105,7 @@ function fetchCards() {
             cards = data;  // Сохраняем все карточки в переменную
             displayCards(currentPage);
             setupPagination();
+            document.querySelector('.second__loader').style.display = 'none'
         })
         .catch(error => {
             console.error("Ошибка при получении данных", error);
@@ -112,9 +113,8 @@ function fetchCards() {
 }
 
 const secondContainer = document.getElementById('secondContainer')
-const secondPagin = document.createElement('div');
-secondPagin.classList.add('second__pagination-page')
-secondContainer.appendChild(secondPagin)
+const secondPagin = document.querySelector('.second__pagination-page')
+
 
 function displayCards(page) {
     const startIndex = (page - 1) * itemsPerPage;
@@ -133,6 +133,7 @@ function displayCards(page) {
         const itemCard = document.createElement('img');
         itemCard.src = card.card;
         itemCard.alt = card.name;
+        itemCard.id = card.name
         itemCard.classList.add('second__card-img');
 
         cardLi.appendChild(itemCard);
@@ -175,11 +176,11 @@ const openList = document.querySelector('.second__functional-sort');
 const sortOptions = document.querySelector('.second__functional-list')
 
 openList.onclick = function(){
-    if (sortOptions.style.display === 'none'){
-        sortOptions.style.display = 'flex';
+    if (sortOptions.style.display === 'flex'){
+        sortOptions.style.display = 'none';
     }
     else{
-        sortOptions.style.display = 'none'
+        sortOptions.style.display = 'flex'
     }
 }
 

@@ -164,8 +164,8 @@ body {
   border: none;
   border-radius: 7px;
   font-size: 20px;
-  padding: 15px 15px;
-  font-weight: 700;
+  padding: 10px 10px;
+  font-weight: 600;
 }
 @media (max-width: 945px) {
   .second__functional-search {
@@ -208,6 +208,25 @@ body {
 }
 .second__functional-checkbox {
   width: 15px;
+}
+.second__loader {
+  margin: 150px auto;
+  width: 60px;
+  height: 60px;
+  border: 6px solid #FFF;
+  border-bottom-color: #000000;
+  border-radius: 50%;
+  display: flex;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .second__card-list {
   margin-top: 45px;
