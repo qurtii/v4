@@ -1,6 +1,3 @@
-
-
-
 function search() {
     let input, filter, ul, li, i;
     input = document.getElementById('search');
@@ -19,90 +16,34 @@ function search() {
     }
 }
 
-// // сортировка
-// openList = document.querySelector('.second__functional-sort');
-// sortOptions = document.querySelector('.second__functional-list');
+// OPEN BURGER MENU
+const burgerOpenMenu = document.querySelector('.header__burger');
+const burgerMenu = document.getElementById('modal_burger');
+const burgerCloseMenu = document.getElementById('burger_close');
 
+burgerOpenMenu.onclick = function() {
+    burgerMenu.style.display = 'flex';
+    burgerOpenMenu.style.display = 'none';
+};
 
-// openList.onclick = function(){
-//     if (sortOptions.style.display === "none"){
-//         sortOptions.style.display = 'flex'
-//     }
-//     else{
-//         sortOptions.style.display = 'none';
-//     }
-// }
-// const firstCheckbox = document.querySelector('.second__functional-checkbox-1');
-// const allCard = document.querySelectorAll('.second__card');  
-// const FirstBlock = document.querySelector(".checkbox_show-1");
-// const paginHide = document.querySelector('.second__pagination')
+burgerCloseMenu.onclick = function() {
+    burgerMenu.style.display = 'none';
+    burgerOpenMenu.style.display = 'flex';
+};
 
-// firstCheckbox.addEventListener('change', function(){
-//     if (firstCheckbox.checked){
-//         allCard.forEach(function(card){
-//             card.style.display = "none";
-//             FirstBlock.style.display = "grid";
-//             paginHide.style.display = "none";
-//         })
-//     }
-//     else{
-//         allCard.forEach(function(card){
-//             card.style.display = "grid";
-//             FirstBlock.style.display = "none"
-//             paginHide.style.display = "flex";
-//         })
-//     }
-// })
-
-// const secondCheckbox = document.querySelector('.second__functional-checkbox-2'); 
-// const secondBlock = document.querySelector(".checkbox_show-2");
-// secondCheckbox.addEventListener('change', function(){
-//     if (secondCheckbox.checked){
-//         allCard.forEach(function(card){
-//             card.style.display = "none";
-//             secondBlock.style.display = "grid";
-//             paginHide.style.display = "none";
-//         })
-//     }
-//     else{
-//         allCard.forEach(function(card){
-//             card.style.display = "grid";
-//             secondBlock.style.display = "none"
-//             paginHide.style.display = "flex";
-//         })
-//     }
-// })
-// const thirdCheckbox = document.querySelector('.second__functional-checkbox-3'); 
-// const thirdBlock = document.querySelector(".checkbox_show-3");
-// thirdCheckbox.addEventListener('change', function(){
-//     if (thirdCheckbox.checked){
-//         allCard.forEach(function(card){
-//             card.style.display = "none";
-//             thirdBlock.style.display = "grid";
-//             paginHide.style.display = "none";
-//         })
-//     }
-//     else{
-//         allCard.forEach(function(card){
-//             card.style.display = "grid";
-//             thirdBlock.style.display = "none"
-//             paginHide.style.display = "flex";
-//         })
-//     }
-// })
 
 
 // пагинация
 const baseUrl = 'https://672b185d976a834dd02595f5.mockapi.io/cards';
 const itemsPerPage = 4;
 let currentPage = 1;
-let cards = [];  // Переменная для хранения всех карт
+let cards = [];     
 
 function fetchCards() {
     fetch(baseUrl)
         .then(response => response.json())
         .then(data => {
-            cards = data;  // Сохраняем все карточки в переменную
+            cards = data; // карточки в переменную
                 displayCards(currentPage);
                 setupPagination();
             document.querySelector('.second__loader').style.display = 'none'
@@ -121,7 +62,7 @@ function displayCards(page) {
     const endIndex = startIndex + itemsPerPage;
     const pageItems = cards.slice(startIndex, endIndex);
 
-    secondPagin.innerHTML = '';  // Очищаем контейнер перед добавлением новых карточек
+    secondPagin.innerHTML = '';
     
     const cardUl = document.createElement('ul');
     cardUl.classList.add('second__card-list');
