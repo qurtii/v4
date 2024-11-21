@@ -69,6 +69,9 @@ body{
       gap: 15px;
       justify-content: none;
     }
+    @media (max-width: 330px){
+      margin-top: -15px;
+    }
   }
   &__header-logo{
     @media (max-width: 945px){
@@ -78,6 +81,23 @@ body{
     @media (max-width: 750px){
       width: calc(100% - 6vh);
     }
+    @media (max-width: 630px){
+      margin-top: 35px;
+      width: calc(100% - 6.5vh);
+    }
+    @media (max-width: 520px){
+      margin-top: 35px;
+      width: calc(100% - 7.3vh);
+    }
+    @media (max-width: 468px){
+      margin-left: -10px;
+      width: calc(100% - 9vh);
+    }
+    @media (max-width: 330px){
+      width: calc(100% - 8.7vh);
+      margin-top: 33px;
+      margin-left: -20px;
+    }
   }
 
   &__burger{
@@ -86,8 +106,21 @@ body{
     cursor: pointer;
     z-index: 1000;
     @media (max-width: 630px){
-        display: flex;
-        height: 40px;
+      display: flex;
+      height: 37px;
+    }
+    @media (max-width: 560px){
+      width: 35px;
+      height: 35px;
+    }
+    @media (max-width: 460px){
+      width: 30px;
+      height: 30px;
+    }
+
+    @media (max-width: 320px){
+      width: 28px;
+      height: 28px;
     }
   }
 
@@ -163,14 +196,32 @@ body{
     font-size: 17px;
     margin-top: 20%;
     margin-left: 80%;
+    @media (max-width: 430px){
+      font-size: 14.7px;
+    }
+    @media (max-width: 390px){
+      font-size: 13.5px;
+    }
   }
   &__li{
     font-size: 13px;
     color: #ffffff;
+    @media (max-width: 430px){
+      font-size: 11.7px;
+    }
+    @media (max-width: 390px){
+      font-size: 10.5px;
+    }
   }
   &__title{
     font-size: 16px;
     color: #a30000;
+    @media (max-width: 430px){
+      font-size: 14.7px;
+    }
+    @media (max-width: 390px){
+      font-size: 13.5px;
+    }
   }
 }
 
@@ -188,7 +239,13 @@ body{
       display: flex;
       gap: 7px;
     }
-    &-search {
+    &-search{
+      display: flex;
+      justify-content: end;
+      align-items: center;
+    }
+    &-input {
+      position: relative;
       font-family:Montserrat;
       color: #fff;
       background-color: #000000;
@@ -205,11 +262,25 @@ body{
         font-size: 13px;
         max-height: 40px;
       }
+      @media (max-width: 350px){
+        font-size: 12.3px;
+        padding: 11px;
+      }
 
       &::placeholder{
         color: #fff;
       }
     }
+    &-clear{
+      cursor: pointer;
+      color: #fff;
+      position: absolute;
+      display: none;
+      text-align: center;
+      margin-right: 8px;
+      user-select: none;
+    }
+
     &-sort{
       background-color: #000;
       width: 54px;
@@ -224,20 +295,16 @@ body{
       @media (max-width: 750px){
         max-width: 40px;
       }
+      @media (max-width: 350px){
+        max-width: 37px;
+      }
     }
     &-list{
-      display: none;
+      overflow: hidden;
       gap: 4px;
-      animation: sortList 0.35s;
       flex-direction: column;
-      @keyframes sortList {
-        from{
-          height: 0px;
-        }
-        to{
-          height: 192px;
-        }
-      }
+      transition: max-height 0.35s ease-out;
+      margin-bottom: 45px;
       @media (max-width: 900px){
         font-size: 13px;
       }
@@ -254,6 +321,7 @@ body{
         border-radius: 7px;
         gap: 5px;
         align-items: center;
+        user-select: none 
       }
       &_close{
         cursor: pointer;
@@ -267,6 +335,7 @@ body{
         border-radius: 7px;
         gap: 5px;
         align-items: center;
+        user-select: none 
       }
       &_3{
         display: flex;
@@ -275,12 +344,16 @@ body{
         border-radius: 7px;
         gap: 5px;
         align-items: center;
+        user-select: none 
       }
 
     }
     &-filt{
       display: flex;
       flex-direction: column;
+      @media (max-width: 930px){
+        font-size: 13.5px;
+      }
       &_1{
         display: flex;
         gap: 7px;
@@ -302,6 +375,15 @@ body{
       margin-bottom: 5px;
       font-size: 19px;
       font-weight: 600;
+      @media (max-width: 930px){
+        font-size: 18px;
+      }
+      @media (max-width: 800px){
+        font-size: 16.5px;
+      }
+      @media (max-width: 520px){
+        font-size: 15.5px;
+      }
     }
     &-sortcb{
       cursor: pointer;
@@ -315,6 +397,12 @@ body{
     &-text{
       cursor: pointer;
       font-size: 15px;
+      @media (max-width: 930px){
+        font-size: 13px;
+      }
+      @media (max-width: 520px){
+        font-size: 12px;
+      }
     }
 
   }
@@ -351,7 +439,6 @@ body{
     }
   }
   &__card-list{
-    margin-top: 45px;
     display: grid;
     grid-template-columns: 435px 435px;
     gap: 30px;
@@ -402,7 +489,16 @@ body{
       max-height: 205px;
       max-width: 330px;
     }
+    @media (max-width: 350px){
+      max-height: 170px;
+      max-width: 285px;
+    }
 
+  }
+  &__search-result{
+    font-size: 19px;
+    font-weight: 600;
+    text-align: center;
   }
   &__modal{
     display: none;
@@ -499,6 +595,12 @@ body{
       border: 1px solid;
       padding: 6px;
       border-radius: 7px;
+      @media (max-width: 520px){
+        font-size: 17px;
+      }
+      @media (max-width: 380px){
+        font-size: 15.5px;
+      }
       &:hover{
         background-color: #ececec;
         transition: all .2s ease;
@@ -557,7 +659,7 @@ body{
       max-width: 600px;
     }
     @media (max-width: 520px){
-      width: 400px;
+      max-width: 400px;
     }
   }
   &__logo{
@@ -576,6 +678,15 @@ body{
     @media (max-width: 520px){
       max-width: 180px;
       padding-left: -10px;
+    }
+    @media (max-width: 520px){
+      width: calc(100% - 7.3vh);
+    }
+    @media (max-width: 468px){
+      width: calc(100% - 9vh);
+    }
+    @media (max-width: 350px){
+      width: calc(100% - 10vh);
     }
   }
   &__text-row{
@@ -596,6 +707,15 @@ body{
     @media (max-width: 520px){
       display: flex;
       flex-direction: column;
+    }
+    @media (max-width: 480px){
+      font-size: 12px;
+    }
+    @media (max-width: 380px){
+      font-size: 11px;
+    }
+    @media (max-width: 340px){
+      font-size: 9px;
     }
   }
   &__text1{
@@ -622,12 +742,26 @@ body{
     @media (max-width: 650px){
       max-width: 200px;
     }
+    @media (max-width: 380px){
+      font-size: 12px;
+      max-width: 220px;
+    }
   }
   &__text3{
     width: 195px;
+    @media (max-width: 380px){
+      font-size: 11.5px;
+    }
   }
   span{
     color: #000000;
     text-decoration: underline;
   }
+}
+
+.second__functional-list-open{
+  max-height: 192px;
+}
+.second__functional-list-close{
+  max-height: 0;
 }

@@ -1,20 +1,40 @@
 // Функция поиска
-function search() {
-    let input, filter, ul, li, i;
-    input = document.getElementById('search');
-    filter = input.value.toUpperCase();
-    ul = document.querySelector('.second__card-list');
-    li = ul.getElementsByTagName('li');
+const searchInput = document.getElementById('search');
+const searchNotFound = document.querySelector('.second__search-result');
+const searchClear = document.querySelector('.second__functional-clear');
 
-    for (i = 0; i < li.length; i++) {
-        const cardName = li[i].querySelector('img').alt.toUpperCase(); // Получаем имя из атрибута alt
-        if (cardName.indexOf(filter) > -1) {
-            li[i].style.display = "";
+searchInput.addEventListener('input', () => {
+    const searchValue = searchInput.value.toLowerCase();
+    searchClear.style.display = searchValue.trim() === '' ? 'none' : 'block';
+    let filteredCards;
+                 // убирает пробелы
+    if (searchValue.trim() === '') {// Если поле поиска пустое, возвращаем все карточки
+        filteredCards = displayCards(cards.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage));
+        searchNotFound.textContent = '';
+    } else {
+        filteredCards = cards.filter(e =>
+            e.name.toLowerCase().includes(searchValue)
+        );
+
+        if (filteredCards.length > 0) {
+            console.log(filteredCards);
+            searchNotFound.textContent = '';
         } else {
-            li[i].style.display = "none";
+            searchNotFound.textContent = 'Ничего не найдено :(';
         }
     }
-}
+
+    searchClear.onclick = function () {
+        searchInput.value = '';
+        searchNotFound.textContent = ''; 
+        displayCards(cards.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage));
+        searchClear.style.display = 'none'; 
+    };
+
+    displayCards(filteredCards);
+    setupPagination(filteredCards); 
+});
+
 
 // OPEN BURGER MENU
 const burgerOpenMenu = document.querySelector('.header__burger');
@@ -32,6 +52,21 @@ burgerCloseMenu.onclick = function() {
 };
 
 
+// открытие настроек
+const sortOptions = document.querySelector('.second__functional-sort');
+const optionsList = document.querySelector('.second__functional-list')
+
+sortOptions.onclick = function(){
+    if (optionsList.classList.contains('second__functional-list-close')){
+        optionsList.classList.remove('second__functional-list-close');
+        optionsList.classList.add('second__functional-list-open');
+    } else{
+        optionsList.classList.remove('second__functional-list-open')
+        optionsList.classList.add('second__functional-list-close');
+    }
+}
+
+// сортировка
 function byName(cardName) {
     return (a, b) => a[cardName].localeCompare(b[cardName]);
 }
@@ -55,13 +90,13 @@ firstSortingDiv.onclick = function() {
         thirdSortingDiv.style.display = 'flex';
         firstSortingClose.style.display = 'none';
         cards.sort(byName('id'));
-        displayCards(currentPage);
+        displayCards(cards.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage));
     } else {
         firstSortingClose.style.display = 'block';
         secondSortingDiv.style.display = 'none';
         thirdSortingDiv.style.display = 'none';
         cards.sort(ByPopularity('popularity'));
-        displayCards(currentPage);
+        displayCards(cards.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage));
     }
 }
 
@@ -75,14 +110,14 @@ secondSortingDiv.onclick = function(){
         thirdSortingDiv.style.display = 'flex'
         secondSortingClose.style.display = 'none';
         cards.sort(byName('id'));
-        displayCards(currentPage);
+        displayCards(cards.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage));
     }
     else{
         secondSortingClose.style.display = 'block';
         firstSortingDiv.style.display = 'none';
         thirdSortingDiv.style.display = 'none';
         cards.sort(byName('name'));
-        displayCards(currentPage);
+displayCards(cards.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage));
         console.log(cards)
     }
 }  
@@ -96,29 +131,83 @@ thirdSortingDiv.onclick = function(){
         firstSortingDiv.style.display = 'flex'
         thirdSortingClose.style.display = 'none';
         cards.sort(byName('id'));
-        displayCards(currentPage);
+displayCards(cards.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage));
     }
     else{
         thirdSortingClose.style.display = "block";
         secondSortingDiv.style.display = 'none';
         firstSortingDiv.style.display = 'none'
         cards.sort(byNameReverse('name'));
-        displayCards(currentPage);
+        displayCards(cards.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage));
     }
 }   
 
+//фильтрация
+const firstCheckBox = document.getElementById('firstCheckbox');
+const secondCheckBox = document.getElementById('secondCheckbox');
+const thirdCheckBox = document.getElementById('thirdCheckbox');
+
+const typeShowplace = 'showplace';
+const typeEntertainment = 'entertainment';
+const typePark = 'park'
+
+firstCheckBox.addEventListener('change', function(){
+    if (firstCheckBox.checked){
+        firstTargetCards = cards.filter(item1 => item1.type === typeShowplace)
+        if (firstTargetCards.length > 0){
+            console.log(firstTargetCards);
+            displayCards(firstTargetCards)
+        } else {
+            console.log('Карточек для чекбокса не найдено!')
+        }
+    } else{
+        displayCards(cards.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage));
+    }
+})
+secondCheckBox.addEventListener('change', function(){
+    if (secondCheckBox.checked){
+        secondTargetCards = cards.filter(item2 => item2.type === typeEntertainment)
+        if (secondTargetCards.length > 0){
+            
+            displayCards(secondTargetCards)
+        } else{
+            console.log('Карточек для чекбокса не найдено!')
+        }
+    } else {
+        displayCards(cards.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage))
+    }
+
+
+})
+thirdCheckBox.addEventListener('change', function(){
+    if (thirdCheckBox.checked){
+        thirdTargetCards = cards.filter(item3 => item3.type === typePark)
+        if (thirdTargetCards.length > 0){
+            
+            displayCards(thirdTargetCards)
+        } else{
+            console.log('Карточек для чекбокса не найдено!')
+        }
+    } else {
+        displayCards(cards.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage))
+    }
+
+
+})
+
+
+
 // пагинация
-const baseUrl = 'https://672b185d976a834dd02595f5.mockapi.io/cards';
 const itemsPerPage = 4;
 let currentPage = 1;
 let cards = [];     
 
 function fetchCards() {
-    fetch(baseUrl)
+    fetch("https://672b185d976a834dd02595f5.mockapi.io/cards")
         .then(response => response.json())
         .then(data => {
             cards = data; // карточки в переменную
-                displayCards(currentPage);
+                displayCards(cards.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage));
                 setupPagination();
             document.querySelector('.second__loader').style.display = 'none'
         })
@@ -131,17 +220,13 @@ const secondContainer = document.getElementById('secondContainer')
 const secondPagin = document.querySelector('.second__pagination-page')
 
 
-function displayCards(page) {
-    const startIndex = (page - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const pageItems = cards.slice(startIndex, endIndex);
-
+function displayCards(data) {
     secondPagin.innerHTML = '';
     
     const cardUl = document.createElement('ul');
     cardUl.classList.add('second__card-list');
 
-    pageItems.forEach(card => {
+    data.forEach(card => {
         const cardLi = document.createElement('li');
         cardLi.classList.add('second__card');
 
@@ -155,93 +240,32 @@ function displayCards(page) {
         cardUl.appendChild(cardLi);
     });
 
-    secondPagin.appendChild(cardUl);  // Добавляем новый список карточек в контейнер
+    secondPagin.appendChild(cardUl);
 }
 
 function setupPagination() {
+    const paginBtn = document.querySelector('.second__pagination')
     const totalPages = Math.ceil(cards.length / itemsPerPage);
 
-    const prevButton = document.querySelector('.second__pagination-prev');
-    const nextButton = document.querySelector('.second__pagination-next');
-
-    // Функции для переключения страниц
-    prevButton.onclick = () => {
-        if (currentPage > 1) {
-            currentPage--;
-            displayCards(currentPage);
+    paginBtn.innerHTML = '';
+    if (totalPages > 1) {
+        for (let i = 1;i <= totalPages; i++){
+            const pageButton = document.createElement('button');
+            pageButton.className = 'second__pagination-link';
+            pageButton.textContent = i;
+            pageButton.addEventListener('click', () => {
+                currentPage = i;
+                displayCards(cards.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage));
+            });
+            paginBtn.appendChild(pageButton);
         }
-    };
+        // ДОБАВИТЬ ФУНКЦИЮ КОТОРАЯ ВЫДЕЛЯЕТ СТРАНИЦУ НА КОТОРОЙ НАХОДИИТСЯ ПОЛЬЗОВАТЕЛЬ
+    } else{
+        paginBtn.style.display = 'none';
+    }
 
-    nextButton.onclick = () => {
-        if (currentPage < totalPages) {
-            currentPage++;
-            displayCards(currentPage);
-        }
-    };
+
 }
 
 fetchCards();
-
-
-sightArr = [1,3,10,11]
-entertainmentArr = [2,3,4,12]
-parkArr = [5,6,8,9]
-
-// сортировка
-
-const openList = document.querySelector('.second__functional-sort');
-const sortOptions = document.querySelector('.second__functional-list')
-
-openList.onclick = function(){
-    if (sortOptions.style.display === 'flex'){
-        sortOptions.style.display = 'none';
-        sorting.style.display = 'flex'
-    }
-    else{
-        sortOptions.style.display = 'flex';
-    }
-}
-
-
-
-
-
-
-const cardList = document.querySelector('.second__card-list');
-const firstCheckbox = document.getElementById('firstCheckbox');
-
-firstCheckbox.addEventListener('change', function() {
-    if (firstCheckbox.checked) {
-        console.log('Чекбокс выбран');
-        cards.forEach(card => {
-            if (sightArr.includes(cards.id)) {
-                console.log(cards.id);
-            }
-        });
-    }
-});
-
-
-let checkboxes = document.querySelectorAll('.second__functional-checkbox')
-
-cards.sort(byName('name'));
-console.log(cards);
-
-function checkCheckboxes(){
-
-    let checkedCount = 0;
-    checkboxes.forEach(checkbox => {
-        if (checkbox.checked){
-            checkedCount++;
-        }
-    });
-
-    displayCards(currentPage);
-
-}
-checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', checkCheckboxes);
-});
-checkCheckboxes()
-
 
