@@ -58,70 +58,70 @@ body{
   margin: 0 auto;
 }
 .header{
-    font-family:Montserrat;
-    font-weight: 800;
-    height: 10px;
-    &__block{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      @media (max-width: 650px){
-        gap: 15px;
-        justify-content: none;
-      }
+  font-family:Montserrat;
+  font-weight: 800;
+  height: 10px;
+  &__block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 650px){
+      gap: 15px;
+      justify-content: none;
     }
-    &__header-logo{
-      @media (max-width: 945px){
-        margin-top: 25px;
-        width: calc(100% - 2.5vh);
-      }
-      @media (max-width: 750px){
-        width: calc(100% - 6vh);
-      }
-    }
-
-    &__burger{
+  }
+  &__header-logo{
+    @media (max-width: 945px){
       margin-top: 25px;
-      display: none;
-      cursor: pointer;
-      z-index: 1000;
-      @media (max-width: 630px){
-          display: flex;
-          height: 40px;
-      }
+      width: calc(100% - 2.5vh);
     }
+    @media (max-width: 750px){
+      width: calc(100% - 6vh);
+    }
+  }
 
-    &__ul{
+  &__burger{
+    margin-top: 25px;
+    display: none;
+    cursor: pointer;
+    z-index: 1000;
+    @media (max-width: 630px){
         display: flex;
-        align-items: center;
-        gap: 25px;
-        @media (max-width: 680px){
-          gap: 18px;
-        }
-        @media (max-width: 630px){
-          display: none;
-        }
+        height: 40px;
     }
-    &__li{
-        font-family:Montserrat;
-        font-weight: 800;
-        color: #000;
-        font-size: 20px;
-        border: none;
-        &:hover{
-          transition: all .3s ease;
-          color: #4b4b4b;
-        }
-        @media (max-width: 935px){
-          font-size: 17px;
-        }
-        @media (max-width: 820px){
-          font-size: 16px;
-        }
-        @media (max-width: 650px){
-          font-size: 15px;
-        }
-    }
+  }
+
+  &__ul{
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      @media (max-width: 680px){
+        gap: 18px;
+      }
+      @media (max-width: 630px){
+        display: none;
+      }
+  }
+  &__li{
+      font-family:Montserrat;
+      font-weight: 800;
+      color: #000;
+      font-size: 20px;
+      border: none;
+      &:hover{
+        transition: all .3s ease;
+        color: #4b4b4b;
+      }
+      @media (max-width: 935px){
+        font-size: 17px;
+      }
+      @media (max-width: 820px){
+        font-size: 16px;
+      }
+      @media (max-width: 650px){
+        font-size: 15px;
+      }
+  }
 }
 
 .modal{
@@ -226,29 +226,95 @@ body{
       }
     }
     &-list{
-      flex-direction: column;
-      margin-top: 15px;
       display: none;
       gap: 4px;
       animation: sortList 0.35s;
+      flex-direction: column;
       @keyframes sortList {
         from{
           height: 0px;
         }
         to{
-          height: 65px;
+          height: 192px;
         }
-      }
-      &_1{
-        display: flex;
-        gap: 7px;
       }
       @media (max-width: 900px){
         font-size: 13px;
       }
     }
+    &-sorting{
+      font-size: 16.5px;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      &_1{
+        display: flex;
+        background-color: #eeece7;
+        padding: 4px 6px;
+        border-radius: 7px;
+        gap: 5px;
+        align-items: center;
+      }
+      &_close{
+        cursor: pointer;
+        display: none;
+        font-size: 11px;
+      }
+      &_2{
+        display: flex;
+        background-color: #eeece7;
+        padding: 3px 5px;
+        border-radius: 7px;
+        gap: 5px;
+        align-items: center;
+      }
+      &_3{
+        display: flex;
+        background-color: #eeece7;
+        padding: 3px 5px;
+        border-radius: 7px;
+        gap: 5px;
+        align-items: center;
+      }
+
+    }
+    &-filt{
+      display: flex;
+      flex-direction: column;
+      &_1{
+        display: flex;
+        gap: 7px;
+        width: 10px;
+      }
+      &_2{
+        display: flex;
+        gap: 7px;
+        width: 10px;
+      }
+      &_3{
+        display: flex;
+        gap: 7px;
+        width: 10px;
+      }
+    }
+    &-title{
+      margin-top: 20px;
+      margin-bottom: 5px;
+      font-size: 19px;
+      font-weight: 600;
+    }
+    &-sortcb{
+      cursor: pointer;
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+    }
     &-checkbox{
       width: 15px;
+    }
+    &-text{
+      cursor: pointer;
+      font-size: 15px;
     }
 
   }

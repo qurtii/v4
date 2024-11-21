@@ -97,6 +97,11 @@ body{
     @media (max-width: 560px){
       width: calc(100% - 4vh);
     }
+    @media (max-width: 450px){
+      
+      margin-left: -30px;
+      width: calc(100% - 5.5vh);
+    }
     
   }
   &__ul{
@@ -184,6 +189,10 @@ body{
     }
     @media (max-width: 450px){
       font-size: 19px;
+      max-width: 350px;
+    }
+    @media (max-width: 450px){
+      font-size: 17px;
       max-width: 350px;
     }
   }

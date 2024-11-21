@@ -103,6 +103,12 @@ body {
     width: calc(100% - 4vh);
   }
 }
+@media (max-width: 450px) {
+  .main__nav-logo {
+    margin-left: -30px;
+    width: calc(100% - 5.5vh);
+  }
+}
 .main__ul {
   display: flex;
   gap: 24px;
@@ -204,6 +210,12 @@ body {
 @media (max-width: 450px) {
   .main__title {
     font-size: 19px;
+    max-width: 350px;
+  }
+}
+@media (max-width: 450px) {
+  .main__title {
+    font-size: 17px;
     max-width: 350px;
   }
 }

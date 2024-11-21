@@ -1,3 +1,4 @@
+// Функция поиска
 function search() {
     let input, filter, ul, li, i;
     input = document.getElementById('search');
@@ -5,10 +6,9 @@ function search() {
     ul = document.querySelector('.second__card-list');
     li = ul.getElementsByTagName('li');
 
-    // filter.includes(data.name)
-    
     for (i = 0; i < li.length; i++) {
-        if (li[i].id.toUpperCase().indexOf(filter) > -1) {
+        const cardName = li[i].querySelector('img').alt.toUpperCase(); // Получаем имя из атрибута alt
+        if (cardName.indexOf(filter) > -1) {
             li[i].style.display = "";
         } else {
             li[i].style.display = "none";
@@ -32,6 +32,80 @@ burgerCloseMenu.onclick = function() {
 };
 
 
+function byName(cardName) {
+    return (a, b) => a[cardName].localeCompare(b[cardName]);
+}
+function byID(CardID){
+    return (a,b) => a[cardID] > b[CardID] ? 1: -1;
+}
+function ByPopularity(cardPopopularity) {
+    return (a, b) => a[cardPopopularity] > b[cardPopopularity] ? 1 : -1;
+}
+
+function byNameReverse(cardNameReverse){
+    return (a,b) => b[cardNameReverse] - a[cardNameReverse] ? 1 : -1;
+}
+
+const firstSortingDiv = document.querySelector('.second__functional-sorting_1');
+const firstSortingClose = document.querySelector('.second__functional-sorting_close1');
+
+firstSortingDiv.onclick = function() {
+    if (firstSortingClose.style.display === "block") {
+        secondSortingDiv.style.display = 'flex';
+        thirdSortingDiv.style.display = 'flex';
+        firstSortingClose.style.display = 'none';
+        cards.sort(byName('id'));
+        displayCards(currentPage);
+    } else {
+        firstSortingClose.style.display = 'block';
+        secondSortingDiv.style.display = 'none';
+        thirdSortingDiv.style.display = 'none';
+        cards.sort(ByPopularity('popularity'));
+        displayCards(currentPage);
+    }
+}
+
+
+const secondSortingDiv = document.querySelector('.second__functional-sorting_2')
+const secondSortingClose = document.querySelector('.second__functional-sorting_close2');
+
+secondSortingDiv.onclick = function(){
+    if (secondSortingClose.style.display === "block"){
+        firstSortingDiv.style.display = 'flex'
+        thirdSortingDiv.style.display = 'flex'
+        secondSortingClose.style.display = 'none';
+        cards.sort(byName('id'));
+        displayCards(currentPage);
+    }
+    else{
+        secondSortingClose.style.display = 'block';
+        firstSortingDiv.style.display = 'none';
+        thirdSortingDiv.style.display = 'none';
+        cards.sort(byName('name'));
+        displayCards(currentPage);
+        console.log(cards)
+    }
+}  
+
+const thirdSortingDiv = document.querySelector('.second__functional-sorting_3')
+const thirdSortingClose = document.querySelector('.second__functional-sorting_close3');
+
+thirdSortingDiv.onclick = function(){
+    if (thirdSortingClose.style.display === "block"){
+        secondSortingDiv.style.display = 'flex'
+        firstSortingDiv.style.display = 'flex'
+        thirdSortingClose.style.display = 'none';
+        cards.sort(byName('id'));
+        displayCards(currentPage);
+    }
+    else{
+        thirdSortingClose.style.display = "block";
+        secondSortingDiv.style.display = 'none';
+        firstSortingDiv.style.display = 'none'
+        cards.sort(byNameReverse('name'));
+        displayCards(currentPage);
+    }
+}   
 
 // пагинация
 const baseUrl = 'https://672b185d976a834dd02595f5.mockapi.io/cards';
@@ -121,12 +195,17 @@ const sortOptions = document.querySelector('.second__functional-list')
 openList.onclick = function(){
     if (sortOptions.style.display === 'flex'){
         sortOptions.style.display = 'none';
-
+        sorting.style.display = 'flex'
     }
     else{
-        sortOptions.style.display = 'flex'
+        sortOptions.style.display = 'flex';
     }
 }
+
+
+
+
+
 
 const cardList = document.querySelector('.second__card-list');
 const firstCheckbox = document.getElementById('firstCheckbox');
@@ -142,5 +221,27 @@ firstCheckbox.addEventListener('change', function() {
     }
 });
 
+
+let checkboxes = document.querySelectorAll('.second__functional-checkbox')
+
+cards.sort(byName('name'));
+console.log(cards);
+
+function checkCheckboxes(){
+
+    let checkedCount = 0;
+    checkboxes.forEach(checkbox => {
+        if (checkbox.checked){
+            checkedCount++;
+        }
+    });
+
+    displayCards(currentPage);
+
+}
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', checkCheckboxes);
+});
+checkCheckboxes()
 
 
